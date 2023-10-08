@@ -5,5 +5,19 @@
              version="3.0">
     <persistence-unit name="default">
 
+        <class>sv.edu.udb.www.Entities.AutorEntity</class>
+        <class>sv.edu.udb.www.Entities.EditorialEntity</class>
+        <class>sv.edu.udb.www.Entities.EmpleadosEntity</class>
+        <class>sv.edu.udb.www.Entities.EstudiantesEntity</class>
+        <class>sv.edu.udb.www.Entities.GeneroEntity</class>
+        <class>sv.edu.udb.www.Entities.MaterialEntity</class>
+        <class>sv.edu.udb.www.Entities.MultasEntity</class>
+        <class>sv.edu.udb.www.Entities.PrestamosEntity</class>
+        <class>sv.edu.udb.www.Entities.TipoMaterialEntity</class>
+        <properties>
+            <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?useSSL=false"/>
+            <property name="eclipselink.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="eclipselink.jdbc.user" value="root"/>
+        </properties>
     </persistence-unit>
 </persistence>
