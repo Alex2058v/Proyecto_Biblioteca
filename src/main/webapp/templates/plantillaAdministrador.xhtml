@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Biblioteca ricaldone</title>
+    <h:outputStylesheet name="css/bootstrap.min.css"/>
+    <h:outputStylesheet name="css/alertify.core.css"/>
+    <h:outputStylesheet name="css/alertify.default.css"/>
+    <h:outputScript name="js/alertify.js"/>
+</h:head>
+
+<h:body>
+    <p:menubar>
+        <p:submenu label="Usuarios" icon="pi pi-fw pi-file">
+            <p:menuitem value="Ver empleados" outcome="/administrador/empleados" />
+        </p:submenu>
+        <p:submenu label="Estudiantes" icon="pi pi-fw pi-file">
+            <p:menuitem value="Ver estudiantes" outcome="/administrador/estudiantes" />
+        </p:submenu>
+        <p:submenu label="Material" icon="pi pi-fw pi-folder-open">
+            <p:menuitem value="Ver materiales" outcome="/administrador/materiales"/>
+        </p:submenu>
+        <p:submenu label="Material" icon="pi pi-fw pi-folder-open">
+            <p:menuitem value="Ver registro" outcome="/administrador/registroPrestamos"/>
+        </p:submenu>
+    </p:menubar>
+
+    <div class="row">
+        <div class="col-md-11 col-sm-11">
+            <ui:insert name="content">
+
+            </ui:insert>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="py-3 my-4">
+            <p class="text-center text-muted">© 2023 Biblioteca ricaldone, DWF404</p>
+        </div>
+    </div>
+</h:body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:b="http://bootsfaces.net/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        template="../templates/plantillaAdministrador.xhtml">
+
+    <ui:define name="content">
+
+        <p:tabView>
+            <p:tab title="Formulario de estudiantes">
+                <h:form id="estudiantesForm" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h:panelGrid styleClass="table">
+                                <h:outputLabel for="estudiantesForm:codigo" value="Código del estudiante"></h:outputLabel>
+                                <h:inputText id="codigo" required="true"
+                                             requiredMessage="Ingrese el código del estudiante" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="estudiantesForm:nombre" value="Nombre del estudiante"></h:outputLabel>
+                                <h:inputText id="nombre" required="true"
+                                             requiredMessage="Ingrese el nombre del estudiante" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="estudiantesForm:dui" value="DUI del estudiante"></h:outputLabel>
+                                <h:inputText id="dui" required="true"
+                                             requiredMessage="Ingrese el dui del estudiante" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="estudiantesForm:direccion" value="Direccion del estudiante"></h:outputLabel>
+                                <h:inputText id="direccion" required="true"
+                                             requiredMessage="Ingrese la direccion del estudiante" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="estudiantesForm:correo" value="Correo del estudiante"></h:outputLabel>
+                                <h:inputText id="correo" required="true"
+                                             requiredMessage="Ingrese el correo del estudiante" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="estudiantesForm:telefono" value="Telefono del estudiante"></h:outputLabel>
+                                <h:inputText id="telefono" required="true"
+                                             requiredMessage="Ingrese el telefono del estudiante" styleClass="form-control">
+                                </h:inputText>
+
+                                <h:outputLabel for="estudiantesForm:cargo" value="Carrera"></h:outputLabel>
+                                <h:selectOneMenu id="carrera" styleClass="form-control">
+                                    <f:selectItem itemValue="" itemLabel="-- Seleccione una carrera --" />
+                                    <f:selectItem itemValue="Tecnico en ingenieria en computacion" itemLabel="Tecnico en ingenieria en computacion" />
+                                    <f:selectItem itemValue="Ingeniera en Sistemas" itemLabel="Ingeniera en Sistemas"/>
+                                    <f:selectItem itemValue="Arquitectura" itemLabel="Arquitectura"/>
+                                    <f:selectItem itemValue="Diseño grafico" itemLabel="Diseño grafico"/>
+                                </h:selectOneMenu>
+
+                                <h:outputLabel for="estudiantesForm:password" value="Contraseña del estudiante"></h:outputLabel>
+                                <h:inputText id="password" required="true"
+                                             requiredMessage="Ingrese la contraseña del estudiante" styleClass="form-control">
+                                </h:inputText>
+                            </h:panelGrid>
+                        </div>
+                    </div>
+                </h:form>
+            </p:tab>
+
+            <p:tab title="Datatable Estudiantes">
+                <h:form id="datatableEstudiantes" styleClass="container">
+                    <b:dataTable id="estudiantesTable"
+                                 var="estudiante" styleClass="table table-striped">
+                        <h:column>
+                            <f:facet name="header">Código del estudiante</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nombre del estudiante</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">DUI del estudiante</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Direccion del estudiante</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Correo del estudiante</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Telefono</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Carrera del estudiante</f:facet>
+                            <h:outputText/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Operaciones</f:facet>
+                            <h:commandButton id="btnDelete"
+                                             value="Eliminar">
+                            </h:commandButton>
+
+                            <h:commandButton id="btnEdit"
+                                             value="Editar">
+                            </h:commandButton>
+                        </h:column>
+                    </b:dataTable>
+                </h:form>
+            </p:tab>
+
+
+            <p:tab title="Datatable prestamos de estudiantes">
+                <h:form id="datatablePrestamosEstudiantes" styleClass="container">
+                    <b:dataTable id="prestamoTable"
+                                 var="prestamo" styleClass="table table-striped">
+                        <h:column>
+                            <f:facet name="header">Codigo del prestamo</f:facet>
+                            <h:outputText/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Estudiante</f:facet>
+                            <h:outputText/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Empleado</f:facet>
+                            <h:outputText/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Codigo del material</f:facet>
+                            <h:outputText/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Fecha de inicio</f:facet>
+                            <h:outputText/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Fecha de final</f:facet>
+                            <h:outputText/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Tipo de multa</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                    </b:dataTable>
+                </h:form>
+            </p:tab>
+
+
+        </p:tabView>
+
+        <h:outputScript>
+
+        </h:outputScript>
+    </ui:define>
+</ui:composition>

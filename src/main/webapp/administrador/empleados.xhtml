@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:b="http://bootsfaces.net/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        template="../templates/plantillaAdministrador.xhtml">
+
+    <ui:define name="content">
+
+        <p:tabView>
+            <p:tab title="Formulario de empleados">
+                <h:form id="empleadosForm" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h:panelGrid styleClass="table">
+                                <h:outputLabel for="empleadosForm:codigo" value="Código del empleado"></h:outputLabel>
+                                <h:inputText id="codigo" required="true"
+                                             requiredMessage="Ingrese el código del empleado" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="empleadosForm:nombre" value="Nombre del empleado"></h:outputLabel>
+                                <h:inputText id="nombre" required="true"
+                                             requiredMessage="Ingrese el nombre del empleado" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="empleadosForm:dui" value="DUI del empleado"></h:outputLabel>
+                                <h:inputText id="dui" required="true"
+                                             requiredMessage="Ingrese el dui del empleado" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="empleadosForm:direccion" value="Direccion del empleado"></h:outputLabel>
+                                <h:inputText id="direccion" required="true"
+                                             requiredMessage="Ingrese la direccion del empleado" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="empleadosForm:correo" value="Correo del empleado"></h:outputLabel>
+                                <h:inputText id="correo" required="true"
+                                             requiredMessage="Ingrese el correo del empleado" styleClass="form-control">
+                                </h:inputText>
+                                <h:outputLabel for="empleadosForm:telefono" value="Telefono del empleado"></h:outputLabel>
+                                <h:inputText id="telefono" required="true"
+                                             requiredMessage="Ingrese el telefono del empleado" styleClass="form-control">
+                                </h:inputText>
+
+                                <h:outputLabel for="empleadosForm:cargo" value="Cargo"></h:outputLabel>
+                                <h:selectOneMenu id="editorial" styleClass="form-control">
+                                    <f:selectItem itemValue="" itemLabel="-- Seleccione un cargo --" />
+                                    <f:selectItem itemValue="Bibliotecario" itemLabel="Bibliotecario" />
+                                    <f:selectItem itemValue="Jefe de bodega" itemLabel="Jefe de bodega" />
+                                </h:selectOneMenu>
+
+                                <h:outputLabel for="empleadosForm:password" value="Contraseña del empleado"></h:outputLabel>
+                                <h:inputText id="password" required="true"
+                                             requiredMessage="Ingrese la contraseña del empleado" styleClass="form-control">
+                                </h:inputText>
+
+                            </h:panelGrid>
+                        </div>
+                    </div>
+                </h:form>
+            </p:tab>
+
+            <p:tab title="Datatable Empleados">
+                <h:form id="datatableEmpleados" styleClass="container">
+                    <b:dataTable id="empleadosTable"
+                                 var="empleados" styleClass="table table-striped">
+                        <h:column>
+                            <f:facet name="header">Código del empleado</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nombre del empleado</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">DUI del empleado</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Direccion del empleado</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Correo del empleado</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Telefono</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Cargo del empleado</f:facet>
+                            <h:outputText/>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Operaciones</f:facet>
+                            <h:commandButton id="btnDelete"
+                                             value="Eliminar">
+                            </h:commandButton>
+
+                            <h:commandButton id="btnEdit"
+                                             value="Editar">
+                            </h:commandButton>
+                        </h:column>
+                    </b:dataTable>
+                </h:form>
+            </p:tab>
+        </p:tabView>
+
+
+        <h:outputScript>
+
+        </h:outputScript>
+    </ui:define>
+</ui:composition>
