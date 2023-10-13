@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:b="http://bootsfaces.net/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        template="../templates/plantillaBodega.xhtml">
+
+   <ui:define name="content">
+
+      <p:tabView>
+         <p:tab title="Formulario Libros">
+            <h:form id="libroForm" >
+               <div class="row">
+                  <div class="col-md-12">
+                     <h:panelGrid styleClass="table">
+                        <h:outputLabel for="libroForm:codigo" value="Código Libro"></h:outputLabel>
+                        <h:inputText id="codigo" required="true"
+                                     requiredMessage="Ingrese el código del libro" styleClass="form-control">
+                        </h:inputText>
+
+                        <h:outputLabel for="libroForm:descripcion" value="Descripción"></h:outputLabel>
+                        <h:inputText id="descripcion" required="true"
+                                     requiredMessage="Ingrese una descripcion" styleClass="form-control">
+                        </h:inputText>
+
+                        <h:outputLabel for="libroForm:nombre" value="Nombre"></h:outputLabel>
+                        <h:inputText id="nombre" required="true"
+                                     requiredMessage="Ingrese el nombre del libro"
+                                     styleClass="form-control">
+                        </h:inputText>
+
+                        <h:outputLabel for="libroForm:existencias" value="Existencias"></h:outputLabel>
+                        <h:inputText id="existencias" required="true"
+                                     requiredMessage="Debe registrar las existencias del libro"
+                                     styleClass="form-control"
+                                     validatorMessage="Debe ingresar un valor válido de existencias, Min. 1 Max. 100">
+                           <f:validateDoubleRange minimum="1" maximum="100"/>
+                        </h:inputText>
+
+                        <h:outputLabel for="libroForm:genero" value="Género"></h:outputLabel>
+                        <h:selectOneMenu id="genero" styleClass="form-control">
+                           <f:selectItem itemValue="" itemLabel="-- Seleccione un Género --" />
+                           <f:selectItem itemValue="Ficción" itemLabel="Ficción" />
+                           <f:selectItem itemValue="No Ficción" itemLabel="No Ficción" />
+                           <f:selectItem itemValue="Ciencia Ficción" itemLabel="Ciencia Ficción" />
+                           <f:selectItem itemValue="Novela" itemLabel="Novela" />
+                           <f:selectItem itemValue="Romance" itemLabel="Romance" />
+                        </h:selectOneMenu>
+
+                        <h:outputLabel for="libroForm:autor" value="Autor"></h:outputLabel>
+                        <h:selectOneMenu id="autor" styleClass="form-control">
+                           <f:selectItem itemValue="" itemLabel="-- Seleccione un Autor --" />
+                           <f:selectItem itemValue="Jane Austen" itemLabel="Jane Austen" />
+                           <f:selectItem itemValue="Gabriel García Márquez" itemLabel="Gabriel García Márquez" />
+                           <f:selectItem itemValue="F. Scott Fitzgerald" itemLabel="F. Scott Fitzgerald" />
+                           <f:selectItem itemValue="Miguel de Cervantes" itemLabel="Miguel de Cervantes" />
+                           <f:selectItem itemValue="Harper Lee" itemLabel="Harper Lee" />
+                        </h:selectOneMenu>
+
+
+                        <h:outputLabel for="libroForm:editorial" value="Editorial"></h:outputLabel>
+                        <h:selectOneMenu id="editorial" styleClass="form-control">
+                           <f:selectItem itemValue="" itemLabel="-- Seleccione una Editorial --" />
+                           <f:selectItem itemValue="F. Scott Fitzgerald" itemLabel="F. Scott Fitzgerald" />
+                           <f:selectItem itemValue="Editorial Sudamericana" itemLabel="Editorial Sudamericana" />
+                           <f:selectItem itemValue="J. B. Lippincott  Co." itemLabel="J. B. Lippincott  Co." />
+                           <f:selectItem itemValue="Juan de la Cuesta" itemLabel="Juan de la Cuesta" />
+                           <f:selectItem itemValue="Editorial Sudamericana" itemLabel="Editorial Sudamericana" />
+                        </h:selectOneMenu>
+
+                        <h:outputLabel for="libroForm:tipoMaterial" value="Tipo de Material"></h:outputLabel>
+                        <h:selectOneMenu id="tipoMaterial" styleClass="form-control">
+                           <f:selectItem itemValue="" itemLabel="-- Seleccione un Tipo --" />
+                           <f:selectItem itemValue="Libro" itemLabel="Libro" />
+                           <f:selectItem itemValue="Revista" itemLabel="Revista" />
+                           <f:selectItem itemValue="Audiolibro" itemLabel="Audiolibro" />
+                        </h:selectOneMenu>
+
+
+                        <h:commandButton value="Agregar"
+                                         styleClass="btn btn-primary center-block">
+                        </h:commandButton>
+                        <h:messages id="successMessage" infoStyle="color:darkgreen" errorStyle="color:darkred"/>
+                        <h:messages id="errorMessage" infoStyle="color:darkgreen" globalOnly="true"
+                                    errorStyle="color:darkred"/>
+                     </h:panelGrid>
+                  </div>
+               </div>
+            </h:form>
+         </p:tab>
+
+         <p:tab title="Data table Libros">
+            <h:form id="datatablelibros" styleClass="container">
+               <b:dataTable id="librosTable"
+                            var="libro" styleClass="table table-striped">
+                  <h:column>
+                     <f:facet name="header">Codigo Libro</f:facet>
+                     <h:outputText/>
+                  </h:column>
+                  <h:column>
+                     <f:facet name="header">Nombre libro</f:facet>
+                     <h:outputText/>
+                  </h:column>
+                  <h:column>
+                     <f:facet name="header">Existencias</f:facet>
+                     <h:outputText/>
+                  </h:column>
+                  <h:column>
+                     <f:facet name="header">Autor</f:facet>
+                     <h:outputText/>
+                  </h:column>
+                  <h:column>
+                     <f:facet name="header">Género</f:facet>
+                     <h:outputText/>
+                  </h:column>
+                  <h:column>
+                     <f:facet name="header">Editorial</f:facet>
+                     <h:outputText/>
+                  </h:column>
+                  <h:column>
+                     <f:facet name="header">Tipo de Material</f:facet>
+                     <h:outputText />
+                  </h:column>
+                  <h:column>
+                     <f:facet name="header">Operaciones</f:facet>
+                     <h:commandButton id="btnDelete"
+                                      value="Eliminar">
+                     </h:commandButton>
+                  </h:column>
+               </b:dataTable>
+            </h:form>
+         </p:tab>
+      </p:tabView>
+
+      <h:outputScript>
+      </h:outputScript>
+
+   </ui:define>
+
+</ui:composition>

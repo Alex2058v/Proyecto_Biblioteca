@@ -4,6 +4,8 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/jefeBodega/menuBodega.xhtml" value="file://$PROJECT_DIR$/src/main/webapp/jefeBodega" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/jefeBodega/tipoMaterial.xhtml" value="file://$PROJECT_DIR$/src/main/webapp/jefeBodega" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/login.xhtml" value="file://$PROJECT_DIR$/src/main/webapp" />
       </map>
     </option>

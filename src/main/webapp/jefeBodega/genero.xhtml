@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:b="http://bootsfaces.net/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:c="http://java.sun.com/jsp/jstl/core"
+        template="../templates/plantillaBodega.xhtml">
+    <ui:define name="content">
+
+        <p:tabView>
+            <p:tab title="Formulario generos de materiales">
+                <h:form id="tipoMatForm" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h:panelGrid styleClass="table">
+                                <h:outputLabel for="autoresForm:codigo" value="Código del material"></h:outputLabel>
+                                <h:inputText id="codigo" required="true"
+                                             requiredMessage="Ingrese el código del autor" styleClass="form-control">
+                                </h:inputText>
+
+                                <h:outputLabel for="autoresForm:nombre" value="Nombre del tipo de material"></h:outputLabel>
+                                <h:inputText id="nombre" required="true"
+                                             requiredMessage="Ingrese el nombre del autor" styleClass="form-control">
+                                </h:inputText>
+
+                                <h:outputLabel for="autoresForm:nacionalidad" value="Nacionalidad"></h:outputLabel>
+                                <h:inputText id="nacionalidad" required="true"
+                                             requiredMessage="Ingrese una nacionalidad" styleClass="form-control">
+                                </h:inputText>
+                            </h:panelGrid>
+                        </div>
+                    </div>
+                </h:form>
+            </p:tab>
+
+            <p:tab title="Datatable autores">
+                <h:form id="dataTable Autores" styleClass="container">
+                    <b:dataTable id="autoresTable"
+                                 var="autores" styleClass="table table-striped">
+                        <h:column>
+                            <f:facet name="header">Código del autor</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nombre del autor</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nacionalidad del autor</f:facet>
+                            <h:outputText/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Operaciones</f:facet>
+                            <h:commandButton id="btnDelete"
+                                             value="Eliminar">
+                            </h:commandButton>
+
+                            <h:commandButton id="btnEdit"
+                                             value="Editar">
+                            </h:commandButton>
+                        </h:column>
+                    </b:dataTable>
+                </h:form>
+            </p:tab>
+        </p:tabView>
+
+    </ui:define>
+</ui:composition>
